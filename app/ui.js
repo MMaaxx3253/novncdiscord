@@ -213,6 +213,12 @@ const UI = {
         }
     },
 
+const host = 'desktop-rgiith0.hale-algieba.ts.net';
+const port = 6701;
+const path = 'websockify';
+const encrypt = true;
+const autoconnect = true;
+
 /* ------^-------
 *     /INIT
 * ==============
@@ -1034,10 +1040,7 @@ const UI = {
             return;
         }
 
-        const host = 'desktop-rgiith0.hale-algieba.ts.net';
-        const port = 6701;
-        const path = 'websockify';
-        const encrypt = true;
+        
 
         if (typeof password === 'undefined') {
             password = UI.getSetting('password');
