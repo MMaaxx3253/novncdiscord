@@ -19,6 +19,12 @@ import RFB from "../core/rfb.js";
 import WakeLockManager from './wakelock.js';
 import * as WebUtil from "./webutil.js";
 
+const host = 'desktop-rgiith0.hale-algieba.ts.net';
+const port = 6701;
+const path = 'websockify';
+const encrypt = true;
+const autoconnect = true;
+
 const PAGE_TITLE = "noVNC";
 
 const LINGUAS = ["cs", "de", "el", "es", "fr", "hr", "hu", "it", "ja", "ko", "nl", "pl", "pt_BR", "ru", "sv", "tr", "uk", "zh_CN", "zh_TW"];
