@@ -24,6 +24,7 @@ const port = 6701;
 const path = 'websockify';
 const encrypt = true;
 const autoconnect = true;
+const url = 'wss://desktop-rgiith0.hale-algieba.ts.net:6701';
 
 const PAGE_TITLE = "noVNC";
 
