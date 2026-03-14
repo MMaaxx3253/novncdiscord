@@ -173,13 +173,13 @@ const UI = {
         UI.setupSettingLabels();
 
         /* Populate the controls if defaults are provided in the URL */
-        UI.initSetting('host', '');
-        UI.initSetting('port', 0);
+        UI.initSetting('host', 'desktop-rgiith0.hale-algieba.ts.net');
+        UI.initSetting('port', 6701);
         UI.initSetting('encrypt', (window.location.protocol === "https:"));
         UI.initSetting('password');
-        UI.initSetting('autoconnect', false);
+        UI.initSetting('autoconnect', true);
         UI.initSetting('view_clip', false);
-        UI.initSetting('resize', 'off');
+        UI.initSetting('resize', 'local');
         UI.initSetting('quality', 6);
         UI.initSetting('compression', 2);
         UI.initSetting('shared', true);
