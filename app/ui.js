@@ -175,7 +175,7 @@ const UI = {
         /* Populate the controls if defaults are provided in the URL */
         UI.initSetting('host', 'desktop-rgiith0.hale-algieba.ts.net');
         UI.initSetting('port', 6701);
-        UI.initSetting('encrypt', (window.location.protocol === "https:"));
+        UI.initSetting('encrypt', true);
         UI.initSetting('password');
         UI.initSetting('autoconnect', true);
         UI.initSetting('view_clip', false);
@@ -1034,9 +1034,10 @@ const UI = {
             return;
         }
 
-        const host = UI.getSetting('host');
-        const port = UI.getSetting('port');
-        const path = UI.getSetting('path');
+        const host = 'desktop-rgiith0.hale-algieba.ts.net';
+        const port = 6701;
+        const path = 'websockify';
+        const encrypt = true;
 
         if (typeof password === 'undefined') {
             password = UI.getSetting('password');
