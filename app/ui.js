@@ -19,13 +19,6 @@ import RFB from "../core/rfb.js";
 import WakeLockManager from './wakelock.js';
 import * as WebUtil from "./webutil.js";
 
-const host = 'desktop-rgiith0.hale-algieba.ts.net';
-const port = 6701;
-const path = 'websockify';
-const encrypt = true;
-const autoconnect = true;
-const url = 'wss://desktop-rgiith0.hale-algieba.ts.net:6701';
-
 const PAGE_TITLE = "noVNC";
 
 const LINGUAS = ["cs", "de", "el", "es", "fr", "hr", "hu", "it", "ja", "ko", "nl", "pl", "pt_BR", "ru", "sv", "tr", "uk", "zh_CN", "zh_TW"];
@@ -180,13 +173,13 @@ const UI = {
         UI.setupSettingLabels();
 
         /* Populate the controls if defaults are provided in the URL */
-        UI.initSetting('host', 'desktop-rgiith0.hale-algieba.ts.net');
-        UI.initSetting('port', 6701);
-        UI.initSetting('encrypt', true);
+        UI.initSetting('host', '');
+        UI.initSetting('port', 0);
+        UI.initSetting('encrypt', (window.location.protocol === "https:"));
         UI.initSetting('password');
-        UI.initSetting('autoconnect', true);
+        UI.initSetting('autoconnect', false);
         UI.initSetting('view_clip', false);
-        UI.initSetting('resize', 'local');
+        UI.initSetting('resize', 'off');
         UI.initSetting('quality', 6);
         UI.initSetting('compression', 2);
         UI.initSetting('shared', true);
@@ -219,7 +212,6 @@ const UI = {
             }
         }
     },
-
 
 /* ------^-------
 *     /INIT
@@ -1042,7 +1034,9 @@ const UI = {
             return;
         }
 
-        
+        const host = UI.getSetting('host');
+        const port = UI.getSetting('port');
+        const path = UI.getSetting('path');
 
         if (typeof password === 'undefined') {
             password = UI.getSetting('password');
@@ -1193,7 +1187,7 @@ const UI = {
                 UI.showStatus(_("Something went wrong, connection is closed"),
                               'error');
             } else {
-                UI.showStatus(_("Failed to connect to server"), 'error');
+                UI.showStatus(_("Failed to connect to server, check if your WebSocket settings are correct and point to the right server"), 'error');
             }
         }
         // If reconnecting is allowed process it now
